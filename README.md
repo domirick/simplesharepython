@@ -1,6 +1,6 @@
 # Simple Share Python
 Simple P2P file transfer in python with client-server architecture.
-The program uses TCP protocol to communicate, and the receiver **should open a port** (default is 32700).
+The program uses TCP protocol to communicate, and the receiver **should open a port**,when participants aren't in the same network (default port is 32700).
 
 ## Usage
 > Compatible with Python 3.x (tested with 3.10)
