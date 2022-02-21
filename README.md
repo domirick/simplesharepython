@@ -1,3 +1,4 @@
+
 # Simple Share Python
 Simple P2P file transfer in python with client-server architecture.
 The program uses TCP protocol to communicate, and the receiver **should open a port**,when participants aren't in the same network (default port is 32700).
@@ -26,8 +27,11 @@ Standalone arguments:
 ```
 > Tip: You can shorten `receive` command, because program only checks for `send`, and otherwise it will be in receiving mode, so you can type anything instead of `receive`.
 > Example: `ssp.py rec`
-## Privacy notice
-Program uses [ipify API](https://www.ipify.org), and sends a GET request to the site to get your external IP. You can disable this function with `--no-api` switch.
+
+## Privacy notices
+- **The program do not use any encryption.** If you wanted to send sensitive data, I suggest to use PGP.
+
+- Program uses [ipify API](https://www.ipify.org), and sends a GET request to the site to get your external IP. You can disable this function with `--no-api` switch.
 
 ## Known issues
 - Progress bar issues (will be fixed in the future)
