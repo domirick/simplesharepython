@@ -1,0 +1,8 @@
+v1.0.0.1
+ - External communication fixed
+ - Modified versioning
+ - Privacy notice updated 
+ - Removed test file (you can use this changelog instead)
+
+v1.0
+ - Software published
