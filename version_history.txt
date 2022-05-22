@@ -2,6 +2,7 @@ v1.0.0.1
  - External communication fixed
  - Modified versioning
  - Privacy notice updated 
+ - Added version history file (this one)
  - Removed test file (you can use this changelog instead)
 
 v1.0

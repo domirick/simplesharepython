@@ -33,6 +33,8 @@ Standalone arguments:
 
 - Program uses [ipify API](https://www.ipify.org), and sends a GET request to the site to get your external IP. You can disable this function with `--no-api` switch.
 
+- In receiving mode the program connects to Google (8.8.8.8) on port 80 (just for get the right adapter's address with internet access)
+
 ## Known issues
 - Progress bar issues (will be fixed in the future)
 	- On bigger packet size (65535 bytes) progress bar can't work properly (appears a lot on receiver's side, when download is finished).

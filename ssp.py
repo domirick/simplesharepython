@@ -10,7 +10,7 @@ import math
 PACKET_SIZE = 32768 # Affects speed & must be consistent in both partner's program (If you modify it, you have to do it in your partner's program too)
 PACKER = struct.Struct('256s Q') # String for filename, and unsigned long long for file size in bytes
 PROGRAM_NAME = "Simple Share Python"
-VERSION = "2022.02.14"
+VERSION = "1.0.0.1"
 GITHUB_LINK = "https://github.com/domirick/simplesharepython"
 AUTHOR = "Domirick"
 PROGRESS_BAR_WIDTH = 40
@@ -22,6 +22,7 @@ server_port = 32700
 fname = "" # The file that sender is sending, or the filename as that receiver is receiving
 ssp_name = "ssp.py" # Will change for actual name if renamed
 use_ipify_api = True
+internal_ip = ""
 
 def get_help():
     print("Usage when sending: ssp.py send -d IP -f FILE [-p PORT_NUMBER]")
@@ -122,8 +123,15 @@ def progress(full,received): # received can be sent too, inside the function it 
     print(f"{percentage}% [{completed}{pending}] {size_formatter(received)}/{size_formatter(full)}         ",end=ending) # Spaces for solving character deleting from previous line (temporary solution)
 
 def receive_file():
+    # Get the internal IP of the correct adapter, with internet access
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+        sock.connect(("8.8.8.8",80))
+        global internal_ip
+        internal_ip = sock.getsockname()[0]
+    
     with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as server:
-        server_address = ('localhost',server_port)
+        #internal_ip = socket.gethostbyname(socket.gethostname())
+        server_address = (internal_ip,server_port)
         server.bind(server_address)
         server.listen(1)
 
@@ -132,7 +140,6 @@ def receive_file():
         if use_ipify_api:
             external_ip = get('https://api.ipify.org').content.decode('utf8')
             print(f"Your external IP is {external_ip}")
-        internal_ip = socket.gethostbyname(socket.gethostname())
         print(f"Your internal IP is {internal_ip}")
         
         print("Waiting for sender on port "+str(server_address[1])+"... (Press CTRL+C to abort)")
