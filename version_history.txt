@@ -1,3 +1,8 @@
+v1.0.0.2
+ - Added requirements.txt
+ - Fixed typo
+ - Updated README
+
 v1.0.0.1
  - External communication fixed
  - Modified versioning

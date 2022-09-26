@@ -1,10 +1,14 @@
 
+
 # Simple Share Python
 Simple P2P file transfer in python with client-server architecture.
 The program uses TCP protocol to communicate, and the receiver **should open a port**,when participants aren't in the same network (default port is 32700).
 
 ## Usage
 > Compatible with Python 3.x (tested with 3.10)
+
+Install dependencies:
+`pip install -r requirements.txt`
 
 This CLI program can operate in sender or receiver mode. Or just display information messages, like help, or version.
 ```
@@ -49,3 +53,4 @@ Standalone arguments:
 - GUI
 - Unit tests
 - Optional DDOS protection (or password protection)
+- Can be set who is the server (the sender or the receiver)

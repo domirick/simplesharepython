@@ -1,0 +1,2 @@
+# required python packages for running the script
+requests==2.26.0

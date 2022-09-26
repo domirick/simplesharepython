@@ -88,7 +88,7 @@ def parse_arguments():
             if not os.path.exists(fname):
                 raise SystemExit(f"{fname} does not exists")
         else:
-            raise SystemExit(f"Usage: {sys.argv[0]} sender (-d | -ip) <receiver's address> -f <file to be sent>...")
+            raise SystemExit(f"Usage: {sys.argv[0]} send (-d | -ip) <receiver's address> -f <file to be sent>...")
 
     # Universal arguments
     if check_opted(opts,["-p","-port"]):
